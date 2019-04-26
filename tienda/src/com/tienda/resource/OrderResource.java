@@ -18,7 +18,7 @@ import com.tienda.util.DataStore;
 @Path("/orders")
 public class OrderResource {
 
-	
+	/*
 	@GET
 	@Produces(value={MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	@Path("{ord-num}")
@@ -47,7 +47,9 @@ public class OrderResource {
 		
 		new TiendaService().addOrder(order);
 		
-		return new DataStore().getAllOrders();
+		return null;//new DataStore().getAllOrders();
 		
 	}
+	*/
+	
 }

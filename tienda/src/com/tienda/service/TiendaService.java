@@ -13,7 +13,7 @@ import com.tienda.bean.Wishlist;
 import com.tienda.util.DataStore;
 
 public class TiendaService {
-	
+/*	
 	public User getUserDetails(String username) throws UserNotFoundException{
 		
 		return new DataStore().getUser(username);
@@ -49,5 +49,14 @@ public class TiendaService {
 	public void addOrder(Order order) {
 		new DataStore().addOrder(order);
 		
+	}
+	public Set<Product> getAllProducts(){
+		return new DataStore().getAllProducts();
+	}
+ */
+	public void addProduct(Product product) {
+
+		System.out.print("222222222222222yash");
+		new DataStore().addProduct(product);
 	}
 }

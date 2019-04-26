@@ -16,14 +16,48 @@ import com.tienda.bean.Order;
 import com.tienda.bean.Product;
 import com.tienda.bean.User;
 import com.tienda.bean.Wishlist;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 
 public class DataStore {
 	private static List<User> users = new CopyOnWriteArrayList<User>();
 	private static List<Product> products = new CopyOnWriteArrayList<Product>();
 	private static List<Order> orders = new CopyOnWriteArrayList<Order>();
 	private static List<Wishlist> wishlists = new CopyOnWriteArrayList<Wishlist>();
-	
-	
+//extra to extra new changes
+//add hibernate code
+	public void addProduct(Product product){
+
+		System.out.print("33333333333333333333333333yash");
+		//Set<Product> products=null;
+		Configuration cfg=new Configuration();
+	     cfg.configure("hibernate.cfg.xml");
+	     SessionFactory factory=cfg.buildSessionFactory();
+	     Session session=factory.openSession();
+	     Transaction t=session.beginTransaction();
+	     session.persist(product);
+	     t.commit();
+	     session.close();
+		//return products;
+	}
+
+
+}//extra	
+/*
+	public Set<Product> addProduct(Product product){
+		Set<Product> products=null;
+		Configuration cfg=new Configuration();
+	     cfg.configure("demo2hibernate/hibernate.cfg.xml");
+	     SessionFactory factory=cfg.buildSessionFactory();
+	     Session session=factory.openSession();
+	     Transaction t=session.beginTransaction();
+	     session.persist(product);
+	     t.commit();
+	     session.close();
+		return products;
+	}
 	static {
 		User ophelia = new User(1, "Ophelia", "ophelia@ws.uk");
 		User gertude = new User(2, "Gertude", "gertude@ws.uk");
@@ -35,7 +69,7 @@ public class DataStore {
 		users.add(laertes);
 		users.add(fortinbras);
 		
-		Product roadster_t_shirt = new Product(1, "880589", 
+		  		Product roadster_t_shirt = new Product(1, "880589", 
 												  "Roadster T-Shirt", 
 												  "Black, V-Neck, Long sleeves", 
 												  499);
@@ -76,7 +110,6 @@ public class DataStore {
 											"Titan Raga Women Blue Dial Watch", 
 											"Leave a lasting impression on everyone with this exquisite watch from Titan. We suggest you team it with an elegant dress to add some glitz.", 
 											5636);
-
 		products.add(roadster_t_shirt);
 		products.add(harley_t_shirt);
 		products.add(uspolo_t_shirt);
@@ -202,3 +235,5 @@ public class DataStore {
 	}	
 
 }
+
+ */
