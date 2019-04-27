@@ -1,5 +1,6 @@
 package com.tienda.util;
 
+import java.io.UncheckedIOException;
 import java.sql.Date;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -44,20 +45,22 @@ public class DataStore {
 	}
 
 
-}//extra	
-/*
-	public Set<Product> addProduct(Product product){
-		Set<Product> products=null;
+	@SuppressWarnings("unchecked")
+	public List<Product> getAllProducts(){
+		
 		Configuration cfg=new Configuration();
-	     cfg.configure("demo2hibernate/hibernate.cfg.xml");
+	     cfg.configure("hibernate.cfg.xml");
 	     SessionFactory factory=cfg.buildSessionFactory();
 	     Session session=factory.openSession();
 	     Transaction t=session.beginTransaction();
-	     session.persist(product);
+	     //session.load(Product.class, );
+	     List<Product> products =session.createCriteria(Product.class).list();
 	     t.commit();
 	     session.close();
 		return products;
 	}
+}
+	/*
 	static {
 		User ophelia = new User(1, "Ophelia", "ophelia@ws.uk");
 		User gertude = new User(2, "Gertude", "gertude@ws.uk");

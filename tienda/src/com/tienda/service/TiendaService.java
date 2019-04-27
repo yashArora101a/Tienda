@@ -1,15 +1,8 @@
 package com.tienda.service;
 
-import java.util.Set;
+import java.util.List;
 
-import com.tienda.Exception.OrderNotFoundException;
-import com.tienda.Exception.ProductNotFoundException;
-import com.tienda.Exception.UserNotFoundException;
-import com.tienda.Exception.WishlistNotFoundException;
-import com.tienda.bean.Order;
 import com.tienda.bean.Product;
-import com.tienda.bean.User;
-import com.tienda.bean.Wishlist;
 import com.tienda.util.DataStore;
 
 public class TiendaService {
@@ -58,5 +51,11 @@ public class TiendaService {
 
 		System.out.print("222222222222222yash");
 		new DataStore().addProduct(product);
+	}
+	
+	public List<Product> getAllProducts() {
+
+		System.out.print("222222222222222yash");
+		return new DataStore().getAllProducts();
 	}
 }

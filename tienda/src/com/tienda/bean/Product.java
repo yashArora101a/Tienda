@@ -84,7 +84,9 @@ public class Product {
 		//this.image = image;
 	}
 
-
+	public void setProductId(int productId) {
+		this.productId=productId;
+	}
 
 	public int getProductId() {
 		return productId;
