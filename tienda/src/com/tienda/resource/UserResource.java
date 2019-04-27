@@ -28,6 +28,7 @@ import com.tienda.service.TiendaService;
 @Path("/users")
 public class UserResource {
 	
+	/*
 	@Context                                             
 	private ResourceContext resourceContext;			// dependency injection
 	
@@ -67,7 +68,7 @@ public class UserResource {
 		return Response.ok(user).build();
 	}
 	
-	/*@POST
+	@POST
 	@Consumes(value={MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	@Produces(value={MediaType.APPLICATION_JSON})
 	public List<User> createUser(User user){
@@ -77,7 +78,6 @@ public class UserResource {
 		return new DataStore().getAllUser();
 		
 	}
-	*/
 	
 	@POST
 	@Consumes(value={MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
@@ -105,4 +105,5 @@ public class UserResource {
     	}
     	throw new WebApplicationException(Response.status(Status.BAD_REQUEST).entity(new ExceptionMessage("No such resources")).build());
 	}
+	 */
 }
